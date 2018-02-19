@@ -8,7 +8,7 @@ As a developer at a metadata aggregator, I would like to have an API to issue ba
 
 | Dataset | Source | Representations | Licenses / Usage Guidelines |
 | --- | --- | --- | --- |
-| LCSH | Subscription Service with updates feed | MARC (ISO or XML) | covered by federal output / cannot license? |
+| LCSH | [Subscription Service (free version is from 2014)](https://www.loc.gov/cds/downloads/MDSConnect/Subjects.2014.utf8.gz) | MARC (ISO or XML) | covered by federal output / cannot license? There is subscription fee for full, up-to-date set. |
 | LCSH | id.loc.gov downloads | SKOS, MADS/RDF, JSON | covered by federal output / cannot license? |
 | LCSH | Classification Schema (partial) | CSV | covered by federal output / cannot license? |
 | OCLC FAST (where relevant type) | ftp://anonftp.oclc.org/pub/researchdata/fast/FASTAll.marcxml.zip | MARC, RDF (using Schema.org) | Open Data Commons Attribution License (ODC-By): http://www.oclc.org/research/activities/fast/odcby.htm. |

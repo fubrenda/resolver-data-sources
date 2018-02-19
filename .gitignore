@@ -2,7 +2,6 @@ data/oclcfast/FAST.mrc
 data/oclcfast/FASTFormGenre.mrc
 vendor
 retrieve-aat.go
-retrieve-fast.go
 retrieve-lcsh.go
 retrieve-tgn.go
 data/

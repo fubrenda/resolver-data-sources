@@ -3,6 +3,62 @@
 
 ## Mapped Fields for Resolver
 
+tag       | JSON field | transform note
+--------- | ---------- | --------------
+001       | identifier |
+016 $a    | Keep if $a doesn't match 001 |
+016 $z    | Keep if $z doesn't match 001 |
+016 $2    | Keep $a if this is not OCoLC |
+034 $d    | Westernmost Coordinate |
+034 $e    | Easternmost Coordinate |
+034 $f    | Northernmost Coordinate |
+034 $g    | Southernmost Coordinate |
+043 $a    | Geographic Area Code | Keep? Will need further parsing to be useable from MARC form.
+046 $s    | Start period (of an event) |
+046 $g    | Death date (of an event?) |
+046 $t    | End period (of an event) |
+053 $abc  | Classification number. | Useful sometimes for mapping?
+111       | Meeting name. | Primary matching term.
+148       | Chronological Term | Primary matching term.
+150       | Topic Term | Primary matching term.
+155       | Form / Genre Term | Primary matching term.
+368 $a    | Type of Meeting / Event Body | Secondary matching term.
+368 $c    | Other Meeting / Event Info | Secondary matching term.
+370 $c    | Associated Country with an Event. | Secondary matching term.
+370 $e    | Headquarters for an Event. | Secondary matching term.
+370 $f    | Associated Location for an Event. | Secondary matching term.
+370 $g    | Place of Origin for an Event. | Secondary matching term.
+372 $a    | Field of Activity for an Event. | Secondary matching term.
+373 $a    | Associated Group for an Event. | Secondary matching term.
+400       | Alternate Form (technically, tracing title) of Personal Name | Secondary matching term.
+410       | Alternate Form (technically, tracing title) of Corporate Term | Secondary matching term.
+411       | Alternate Form (technically, tracing title) of Meeting Name | Secondary matching term.
+430       | Alternate Form (technically, tracing title) of Uniform Title | Secondary matching term.
+445       | Additional Form | Secondary matching term.
+448       | Alternate Form (technically, tracing title) of Chronological Term | Secondary matching term.
+450       | Alternate Form (technically, tracing title) of Topic Term | Secondary matching term.
+451       | Alternate Form (technically, tracing title) of Geographic Term | Secondary matching term.
+455       | Alternate Form (technically, tracing title) of Form Genre Term | Secondary matching term.
+485 $v    | Alternate Form (technically, tracing title) of Form Subdivision Term | Secondary matching term.
+500       | Alternate Form (technically, See Also) of Personal Name | Secondary matching term.
+510       | Alternate Form (technically, See Also) of Corporate Name | Secondary matching term.
+511       | Alternate Form (technically, See Also) of Meeting Name | Secondary matching term.
+530       | Alternate Form (technically, See Also) of Uniform Title | Secondary matching term.
+548       | Alternate Form (technically, See Also) of Chronological Term | Secondary matching term.
+550       | Alternate Form (technically, See Also) of Topic Term | Secondary matching term.
+551       | Alternate Form (technically, See Also) of Geographic Term | Secondary matching term.
+555 $a$v  | Alternate Form (technically, See Also) of Form Genre Term | Secondary matching term.
+700       | Linked Personal Name | Tertiary matching term dependent on type.
+710       | Linked Corporate Name | Tertiary matching term dependent on type.
+711       | Linked Meeting Name | Tertiary matching term dependent on type.
+730       | Linked Uniform Title | Tertiary matching term dependent on type.
+748       | Linked Chronological Term | Tertiary matching term dependent on type.
+750       | Linked Topical Term | Tertiary matching term dependent on type.
+751       | Linked Geographic Term | Tertiary matching term dependent on type.
+755       | Linked GenreForm Term | Tertiary matching term dependent on type.
+780       | Linked General Subdivision Term | Tertiary matching term. Map to Event or other term for context.
+781       | Linked Geo Subdivision Term | Tertiary matching term. Map to Event or other term for context.
+785       | Linked Form Subdivision Term | Tertiary matching term dependent on type.
 
 ## MARC Data Analysis (Subset)
 

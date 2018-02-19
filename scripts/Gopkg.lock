@@ -8,6 +8,12 @@
   revision = "64fcc1df0ed852ff9b507cbddc70ab957a2f5d4b"
 
 [[projects]]
+  branch = "v1"
+  name = "github.com/dutchcoders/goftp"
+  packages = ["."]
+  revision = "ed59a591ce14ff6c19c49be14294528d11a88c37"
+
+[[projects]]
   branch = "master"
   name = "github.com/knakk/digest"
   packages = ["."]
@@ -28,6 +34,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "1d69a12cb7558518e8ea901534a855d4cb016b04dc460d31d500096b8b342144"
+  inputs-digest = "c87227c56cfc609442a388e8d1eefce6e2197126a2bbef27c81d95ebf4fcef08"
   solver-name = "gps-cdcl"
   solver-version = 1
