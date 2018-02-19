@@ -11,10 +11,10 @@ As a developer at a metadata aggregator, I would like to have an API to issue ba
 | LCSH | Subscription Service with updates feed | MARC (ISO or XML) | covered by federal output / cannot license? |
 | LCSH | id.loc.gov downloads | SKOS, MADS/RDF, JSON | covered by federal output / cannot license? |
 | LCSH | Classification Schema (partial) | CSV | covered by federal output / cannot license? |
-| OCLC FAST (where relevant type) | https://www.oclc.org/research/themes/data-science/fast/download.html | MARC, RDF (using Schema.org) | Open Data Commons Attribution License (ODC-By): http://www.oclc.org/research/activities/fast/odcby.htm. |
-| Getty AAT | http://www.getty.edu/research/tools/vocabularies/obtain/download.html | JSON, RDF (local schema) | Open Data Commons Attribution License (ODC-By) 1.0 |
-| Getty TGN | http://www.getty.edu/research/tools/vocabularies/obtain/download.html | JSON, RDF (local schema) | Open Data Commons Attribution License (ODC-By) 1.0 |
-| Wikidata (where pre-matched & relevant type) | See access points at https://www.wikidata.org/wiki/Wikidata:Data_access | local schema RDF & JSON | CC-0 |
+| OCLC FAST (where relevant type) | ftp://anonftp.oclc.org/pub/researchdata/fast/FASTAll.marcxml.zip | MARC, RDF (using Schema.org) | Open Data Commons Attribution License (ODC-By): http://www.oclc.org/research/activities/fast/odcby.htm. |
+| Getty AAT | http://vocab.getty.edu/dataset/aat/full.zip | JSON, RDF (local schema) | Open Data Commons Attribution License (ODC-By) 1.0 |
+| Getty TGN | http://vocab.getty.edu/dataset/tgn/full.zip | JSON, RDF (local schema) | Open Data Commons Attribution License (ODC-By) 1.0 |
+| Wikidata (where pre-matched & relevant type) | See access points at https://www.wikidata.org/wiki/Wikidata:Data_access or use [this SPARQL Endpoint Query](https://query.wikidata.org/sparql?query=SELECT%20*%20%0AWHERE%20%7B%0A%20%20%20%20VALUES%20%3Fp%20%7B%20wdt%3AP244%20wdt%3AP214%20wdt%3AP4801%20wdt%3AP1014%20wdt%3AP486%20%7D%20%0A%20%20%20%20%3Fs%20%3Fp%20%3Fo.%0A%7D) | local schema as JSON | CC-0 |
 
 
 ## Attributions
