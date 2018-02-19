@@ -5,8 +5,5 @@ retrieve-aat.go
 retrieve-fast.go
 retrieve-lcsh.go
 retrieve-tgn.go
-data/gettyaat
-data/gettytgn
-data/oclcfast/marc
-data/oclcfast/marcxml
+data/
 .python-version
