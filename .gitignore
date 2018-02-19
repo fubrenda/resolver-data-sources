@@ -1,7 +1,5 @@
 data/oclcfast/FAST.mrc
 data/oclcfast/FASTFormGenre.mrc
 vendor
-retrieve-aat.go
-retrieve-tgn.go
 data/
 .python-version

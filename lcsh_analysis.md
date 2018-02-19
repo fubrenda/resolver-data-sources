@@ -8,10 +8,11 @@
 
 tag       | field info | note
 --------- | ---------- | ----
-001       | LCSH identifier |
+001       | LCSH identifier. |
 003       | Do not map. |
 005       | Do not map.
 008       | Do not map. |
+010       | 
 016 $a    | Keep if $a doesn't match 001 |
 016 $z    | Keep if $z doesn't match 001 |
 016 $2    | Keep $a if this is not OCoLC |
