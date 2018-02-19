@@ -1,8 +1,54 @@
 # LCSH
 
-
 ## Mapped Fields for Resolver
 
+tag       | JSON field       | transform note
+--------- | ---------------- | --------------
+n/a       | type             | fill according to 1XX type.
+001       | identifier       |
+010 $a    | alt-identifier   | Keep if doesn't match 001
+010 $z    | old-identifier   | Keep if doesn't match 001
+100       | heading          | Primary matching term. Make type "personal-name".
+400 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+500 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+110       | heading          | Primary matching term. Make type "corporate-name".
+410 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+510 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+111       | heading          | Primary matching term. Make type "meeting-name".
+411 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+130       | heading          | Primary matching term. Make type "uniform-title".
+430 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+530 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+150       | heading          | Primary matching term. Make type "topic".
+450 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+550 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+151       | heading          | Primary matching term. Make type "geographic".
+451 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+551 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+155       | heading          | Primary matching term. Make type "form-genre".
+455 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+555 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+180       | heading          | Primary matching term. Make type "general-subdivision".
+480 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+580 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+181       | heading          | Primary matching term. Make type "geo-subdivision".
+581 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+781 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+182       | heading          | Primary matching term. Make type "chrono-subdivision".
+482 !$w$5 | alt-heading      | Secondary matching term. Ignore $w.
+185       | heading          | Primary matching term. Make type "form-subdivision".
+485 !$w$5 | alt-heading      | Secondary matching term. Ignore $w.
+585 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+034 $d    | west-coordinate  | Tertiary matching term.
+034 $e    | east-coordinate  | Tertiary matching term.
+034 $f    | north-coordinate | Tertiary matching term.
+034 $g    | south-coordinate | Tertiary matching term.
+043 $a    | marc-geo-code    | Tertiary matching term. Will need further parsing to be useable from MARC geo-form.
+050 $a    | classification   | Tertiary matching term.
+053 $abc  | classification   | Tertiary matching term.
+072 $a    | classification   | Tertiary matching term.
+073 $a    | classification   | Tertiary matching term.
+680       | general-note     | Keep for general matching field.
 
 ## MARC Data Analysis (Subset)
 
@@ -12,46 +58,35 @@ tag       | field info | note
 003       | Do not map. |
 005       | Do not map.
 008       | Do not map. |
-010       | 
-016 $a    | Keep if $a doesn't match 001 |
-016 $z    | Keep if $z doesn't match 001 |
-016 $2    | Keep $a if this is not OCoLC |
+010 $a    | Keep if doesn't match 001 |
+010 $z    | Keep if doesn't match 001 |
 034 $d    | Westernmost Coordinate |
 034 $e    | Easternmost Coordinate |
 034 $f    | Northernmost Coordinate |
 034 $g    | Southernmost Coordinate |
+034 $2    | Do not map. | Coordinates source.
+035       | Do not map. | Ignore for now.
 040       | Do not map. |
 043 $a    | Geographic Area Code | Keep? Will need further parsing to be useable from MARC form.
-046 $s    | Start period (of an event) |
-046 $g    | Death date (of an event?) |
-046 $t    | End period (of an event) |
-046 $v    | Do not map. |
-046 $u    | Do not map. | URI for a date?
-046 $2    | Do not map. | Date scheme for field, possibly useful later.
-053 $abc  | Classification number. | Useful sometimes for mapping?
+050 $a    | Classification number. | Useful sometimes for mapping? Tertiary matching term.
+052 $a    | Do not map. |
+053 $abc  | Classification number. | Useful sometimes for mapping? Tertiary matching term.
+072 $a    | Classification number. | Useful sometimes for mapping? Tertiary matching term.
+073 $a    | Classification number. | Useful sometimes for mapping? Tertiary matching term.
+073 $z    | Do not map. |
+100       | Personal name. | Primary matching term.
+110       | Corporate name. | Primary matching term.
 111       | Meeting name. | Primary matching term.
-148       | Chronological Term | Primary matching term.
+130       | Uniform Title name. | Primary matching term.
 150       | Topic Term | Primary matching term.
+151       | Geographic Term | Primary matching term.
 155       | Form / Genre Term | Primary matching term.
+180       | General Subdivision | Secondary matching term requiring context.
+181       | Geographic Subdivision | Secondary matching term requiring context.
+182       | Chronological Subdivision | Secondary matching term requiring context.
+185       | Form Subdivision | Secondary matching term requiring context.
 260       | Do not map. |
 360       | Do not map. |
-368 $a    | Type of Meeting / Event Body | Secondary matching term.
-368 $c    | Other Meeting / Event Info | Secondary matching term.
-368 $2    | Do not map. |
-370 $c    | Associated Country with an Event. | Secondary matching term.
-370 $e    | Headquarters for an Event. | Secondary matching term.
-370 $f    | Associated Location for an Event. | Secondary matching term.
-370 $g    | Place of Origin for an Event. | Secondary matching term.
-370 rest  | Do not map. |
-372 $a    | Field of Activity for an Event. | Secondary matching term.
-372 $v    | Do not map. |
-372 $2    | Do not map. |
-373 $a    | Associated Group for an Event. | Secondary matching term.
-373 $s    | Do not map. |
-373 $v    | Do not map. |
-373 $u    | Do not map. |
-373 $2    | Do not map. |
-377 $a    | Associated Language. | Do not use now?
 400       | Alternate Form (technically, tracing title) of Personal Name | Secondary matching term.
 400 $w    | Do not map.  | Ignore for now.
 410       | Alternate Form (technically, tracing title) of Corporate Term | Secondary matching term.
@@ -60,73 +95,44 @@ tag       | field info | note
 411 $w    | Do not map.  | Ignore for now.
 430       | Alternate Form (technically, tracing title) of Uniform Title | Secondary matching term.
 430 $w    | Do not map.  | Ignore for now.
-445       | Additional Form | Secondary matching term.
-448       | Alternate Form (technically, tracing title) of Chronological Term | Secondary matching term.
-448 $w    | Do not map.  | Ignore for now.
 450       | Alternate Form (technically, tracing title) of Topic Term | Secondary matching term.
 450 $w    | Do not map.  | Ignore for now.
 451       | Alternate Form (technically, tracing title) of Geographic Term | Secondary matching term.
 451 $w    | Do not map.  | Ignore for now.
 455       | Alternate Form (technically, tracing title) of Form Genre Term | Secondary matching term.
 455 $w    | Do not map.  | Ignore for now.
-485 $v    | Alternate Form (technically, tracing title) of Form Subdivision Term | Secondary matching term.
+480       | Alternate Form (technically, tracing title) of General Subdivision Term | Secondary matching term.
+480 $w$5  | Do not map.  | Ignore for now.
+482       | Alternate Form (technically, tracing title) of Chronological Subdivision Term | Secondary matching term.
+482 $w$5  | Do not map.  | Ignore for now.
+485       | Alternate Form (technically, tracing title) of Form Subdivision Term | Secondary matching term.
 485 $w$5  | Do not map.  | Ignore for now.
 500       | Alternate Form (technically, See Also) of Personal Name | Secondary matching term.
+500 $w    | Do not map.  | Ignore for now.
 510       | Alternate Form (technically, See Also) of Corporate Name | Secondary matching term.
-510 $0    | Do not map. | Ignore for now.
 510 $w    | Do not map. | Ignore for now.
-511       | Alternate Form (technically, See Also) of Meeting Name | Secondary matching term.
-511 $0    | Do not map. | Ignore for now.
-511 $w    | Do not map. | Ignore for now.
 530       | Alternate Form (technically, See Also) of Uniform Title | Secondary matching term.
-530 $0    | Do not map. | Ignore for now.
 530 $w    | Do not map. | Ignore for now.
-548       | Alternate Form (technically, See Also) of Chronological Term | Secondary matching term.
-548 $2    | Do not map. |
 550       | Alternate Form (technically, See Also) of Topic Term | Secondary matching term.
-550 $0    | Do not map. | Ignore for now.
 550 $w    | Do not map. | Ignore for now.
 551       | Alternate Form (technically, See Also) of Geographic Term | Secondary matching term.
-551 $0    | Do not map. | Ignore for now.
 551 $w    | Do not map. | Ignore for now.
-555 $a$v  | Alternate Form (technically, See Also) of Form Genre Term | Secondary matching term.
-555 $0    | Do not map. | Ignore for now.
+555       | Alternate Form (technically, See Also) of Form Genre Term | Secondary matching term.
+555 $w    | Do not map. | Ignore for now.
+580       | Alternate Form (technically, See Also) of General Subdivision | Secondary matching term.
+580 $w    | Do not map. | Ignore for now.
+581       | Alternate Form (technically, See Also) of Geographic Subdivision | Secondary matching term.
+581 $w    | Do not map. | Ignore for now.
+585       | Alternate Form (technically, See Also) of Form Subdivision | Secondary matching term.
+585 $w    | Do not map. | Ignore for now.
+667       | Do not map. |
 670       | Do not map. |
+675       | Do not map. |
+678       | Do not map. |
 680       | Public, general note. | Keep for general matching field?
-688       | Do not map. | Usage stats.
-700       | Linked Personal Name | Tertiary matching term dependent on type.
-700 $0    | Do not map. | Reconciliation URI?
-700 $w    | Do not map. | Ignore for now.
-710       | Linked Corporate Name | Tertiary matching term dependent on type.
-710 $0    | Do not map. | Reconciliation URI?
-710 $w    | Do not map. | Ignore for now.
-711       | Linked Meeting Name | Tertiary matching term dependent on type.
-711 $0    | Do not map. | Reconciliation URI?
-711 $w    | Do not map. | Ignore for now.
-730       | Linked Uniform Title | Tertiary matching term dependent on type.
-730 $0    | Do not map. | Reconciliation URI?
-730 $w    | Do not map. | Ignore for now.
-748       | Linked Chronological Term | Tertiary matching term dependent on type.
-748 $0    | Do not map. | Reconciliation URI?
-748 $w    | Do not map. | Ignore for now.
-750       | Linked Topical Term | Tertiary matching term dependent on type.
-750 $0    | Do not map. | Reconciliation URI?
-750 $w    | Do not map. | Ignore for now.
-751       | Linked Geographic Term | Tertiary matching term dependent on type.
-751 $0    | Do not map. | Reconciliation URI?
-751 $w    | Do not map. | Ignore for now.
-755       | Linked GenreForm Term | Tertiary matching term dependent on type.
-755 $0    | Do not map. | Reconciliation URI?
-755 $w    | Do not map. | Ignore for now.
-780       | Linked General Subdivision Term | Tertiary matching term. Map to Event or other term for context.
-780 $0    | Do not map. | Ignore for now.
-780 $w    | Do not map. | Ignore for now.
+681       | Do not map. |
 781       | Linked Geo Subdivision Term | Tertiary matching term. Map to Event or other term for context.
-781 $0    | Do not map. | Ignore for now.
 781 $w    | Do not map. | Ignore for now.
-785       | Linked Form Subdivision Term | Tertiary matching term dependent on type.
-785 $0    | Do not map. | Ignore for now.
-785 $w    | Do not map. | Ignore for now.
 
 
 ## MARC Data Analysis (Raw)

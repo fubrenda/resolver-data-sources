@@ -3,62 +3,86 @@
 
 ## Mapped Fields for Resolver
 
-tag       | JSON field | transform note
---------- | ---------- | --------------
-001       | identifier |
-016 $a    | Keep if $a doesn't match 001 |
-016 $z    | Keep if $z doesn't match 001 |
-016 $2    | Keep $a if this is not OCoLC |
-034 $d    | Westernmost Coordinate |
-034 $e    | Easternmost Coordinate |
-034 $f    | Northernmost Coordinate |
-034 $g    | Southernmost Coordinate |
-043 $a    | Geographic Area Code | Keep? Will need further parsing to be useable from MARC form.
-046 $s    | Start period (of an event) |
-046 $g    | Death date (of an event?) |
-046 $t    | End period (of an event) |
-053 $abc  | Classification number. | Useful sometimes for mapping?
-111       | Meeting name. | Primary matching term.
-148       | Chronological Term | Primary matching term.
-150       | Topic Term | Primary matching term.
-155       | Form / Genre Term | Primary matching term.
-368 $a    | Type of Meeting / Event Body | Secondary matching term.
-368 $c    | Other Meeting / Event Info | Secondary matching term.
-370 $c    | Associated Country with an Event. | Secondary matching term.
-370 $e    | Headquarters for an Event. | Secondary matching term.
-370 $f    | Associated Location for an Event. | Secondary matching term.
-370 $g    | Place of Origin for an Event. | Secondary matching term.
-372 $a    | Field of Activity for an Event. | Secondary matching term.
-373 $a    | Associated Group for an Event. | Secondary matching term.
-400       | Alternate Form (technically, tracing title) of Personal Name | Secondary matching term.
-410       | Alternate Form (technically, tracing title) of Corporate Term | Secondary matching term.
-411       | Alternate Form (technically, tracing title) of Meeting Name | Secondary matching term.
-430       | Alternate Form (technically, tracing title) of Uniform Title | Secondary matching term.
-445       | Additional Form | Secondary matching term.
-448       | Alternate Form (technically, tracing title) of Chronological Term | Secondary matching term.
-450       | Alternate Form (technically, tracing title) of Topic Term | Secondary matching term.
-451       | Alternate Form (technically, tracing title) of Geographic Term | Secondary matching term.
-455       | Alternate Form (technically, tracing title) of Form Genre Term | Secondary matching term.
-485 $v    | Alternate Form (technically, tracing title) of Form Subdivision Term | Secondary matching term.
-500       | Alternate Form (technically, See Also) of Personal Name | Secondary matching term.
-510       | Alternate Form (technically, See Also) of Corporate Name | Secondary matching term.
-511       | Alternate Form (technically, See Also) of Meeting Name | Secondary matching term.
-530       | Alternate Form (technically, See Also) of Uniform Title | Secondary matching term.
-548       | Alternate Form (technically, See Also) of Chronological Term | Secondary matching term.
-550       | Alternate Form (technically, See Also) of Topic Term | Secondary matching term.
-551       | Alternate Form (technically, See Also) of Geographic Term | Secondary matching term.
-555 $a$v  | Alternate Form (technically, See Also) of Form Genre Term | Secondary matching term.
-700       | Linked Personal Name | Tertiary matching term dependent on type.
-710       | Linked Corporate Name | Tertiary matching term dependent on type.
-711       | Linked Meeting Name | Tertiary matching term dependent on type.
-730       | Linked Uniform Title | Tertiary matching term dependent on type.
-748       | Linked Chronological Term | Tertiary matching term dependent on type.
-750       | Linked Topical Term | Tertiary matching term dependent on type.
-751       | Linked Geographic Term | Tertiary matching term dependent on type.
-755       | Linked GenreForm Term | Tertiary matching term dependent on type.
-780       | Linked General Subdivision Term | Tertiary matching term. Map to Event or other term for context.
-781       | Linked Geo Subdivision Term | Tertiary matching term. Map to Event or other term for context.
-785       | Linked Form Subdivision Term | Tertiary matching term dependent on type.
+tag       | JSON field       | transform note
+--------- | ---------------- | --------------
+n/a       | type             | fill according to 1XX type.
+001       | identifier       |
+016 $a    | alt-identifier   | Keep if $a doesn't match 001
+016 $z    | old-identifier   | Keep if $z doesn't match 001
+700 $0    | other-identifier | Reconciliation URI (identifier only).
+710 $0    | other-identifier | Reconciliation URI (identifier only).
+711 $0    | other-identifier | Reconciliation URI (identifier only).
+730 $0    | other-identifier | Reconciliation URI (identifier only).
+748 $0    | other-identifier | Reconciliation URI (identifier only).
+750 $0    | other-identifier | Reconciliation URI (identifier only).
+751 $0    | other-identifier | Reconciliation URI (identifier only).
+755 $0    | other-identifier | Reconciliation URI (identifier only).
+780 $0    | other-identifier | Reconciliation URI (identifier only).
+781 $0    | other-identifier | Reconciliation URI (identifier only).
+785 $0    | other-identifier | Reconciliation URI (identifier only).
+100       | heading          | Primary matching term. Make type "personal-name".
+400 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+500 !$w$0 | alt-heading      | Secondary matching term. Ignore $w. Ignore $0, points to other FAST identifiers.
+700 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+110       | heading          | Primary matching term. Make type "corporate-name".
+410 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+510 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+710 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+111       | heading          | Primary matching term. Make type "meeting-name".
+411 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+511 !$w$0 | alt-heading      | Secondary matching term. Ignore $w. Ignore $0, points to other FAST identifiers.
+711 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+430 !$w   | alt-heading      | Secondary matching term (uniform title). Ignore $w.
+530 !$w$0 | alt-heading      | Secondary matching term. Ignore $w. Ignore $0, points to other FAST identifiers.
+730 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+148       | heading          | Primary matching term. Make type "chronological-term".
+448 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+548 !$w$2 | alt-heading      | Secondary matching term. Ignore $w. Ignore $2.
+748 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+150       | heading          | Primary matching term. Make type "topic".
+450 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+550 !$w$0 | alt-heading      | Secondary matching term. Ignore $w. Ignore $0, points to other FAST identifiers.
+750 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+451 !$w   | alt-heading      | Secondary matching term (geographic term). Ignore $w.
+551 !$w$0 | alt-heading      | Secondary matching term. Ignore $w. Ignore $0, points to other FAST identifiers.
+751 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+155       | heading          | Primary matching term. Make type "form-genre".
+445       | alt-heading      | Secondary matching term (additional form).
+455 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+555 !$w$0 | alt-heading      | Secondary matching term. Ignore $w. Ignore $0, points to other FAST identifiers.
+755 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+180       | heading          | Primary matching term. Make type "general-subdivision".
+480 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+580 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+780 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+181       | heading          | Primary matching term. Make type "geo-subdivision".
+581 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+781 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+182       | heading          | Primary matching term. Make type "chrono-subdivision".
+482 !$w$5 | alt-heading      | Secondary matching term. Ignore $w.
+185       | heading          | Primary matching term. Make type "form-subdivision".
+485 !$w$5 | alt-heading      | Secondary matching term. Ignore $w.
+585 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+785 !$w   | alt-heading      | Secondary matching term. Ignore $w.
+034 $d    | west-coordinate  | Tertiary matching term.
+034 $e    | east-coordinate  | Tertiary matching term.
+034 $f    | north-coordinate | Tertiary matching term.
+034 $g    | south-coordinate | Tertiary matching term.
+043 $a    | marc-geo-code    | Tertiary matching term. Will need further parsing to be useable from MARC geo-form.
+046 $s    | start-date       | Tertiary matching term. Start period (of an event)
+046 $g    | death-date       | Tertiary matching term. Death date.
+046 $t    | end-date         | Tertiary matching term. End period (of an event)
+053 $abc  | classification   | Tertiary matching term.
+368 $a    | meeting-type     | Tertiary matching term. Type of Meeting / Event Body.
+368 $c    | meeting-info     | Tertiary matching term. Other Meeting / Event info.
+370 $c    | country          | Tertiary matching term. Associated country.
+370 $e    | headquarters     | Tertiary matching term. Headquarters.
+370 $f    | location         | Tertiary matching term. Associated location.
+370 $g    | place-of-origin  | Tertiary matching term. Place of Origin.
+372 $a    | field-of-action  | Tertiary matching term. Field of Activity.
+373 $a    | group            | Tertiary matching term. Associated Group.
+377 $a    | language         | Tertiary matching term. Associated Language.
+680       | general-note     | Keep for general matching field.
 
 ## MARC Data Analysis (Subset)
 
