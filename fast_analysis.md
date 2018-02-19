@@ -9,15 +9,21 @@
 tag | field info | note
 --- | ---------- | ----
 001 | OCLC FAST identifier |
-016 $2 | if not OCoLC |
-016 $a | if doesn't match 001 |
-148 | Chronological Term |
-155 | Form / Genre Term |
-448 $a | Alternate Form (technically, tracing title) of Chronological Term | ignore $w for now
+003 | Do not map. |
+005 | Do not map.
+008 | Do not map. |
+016 $a | Keep if $a doesn't match 001 |
+016 $2 | Keep this and $a if $2 not OCoLC |
+040 | Do not map. |
+148 | Chronological Term | Primary matching term.
+155 | Form / Genre Term | Primary matching term.
+448 $a | Alternate Form (technically, tracing title) of Chronological Term | Secondary matching term.
+448 $w | Do not map.  | Ignore for now.
 455 $a $v | Alternate Form (technically, tracing title) of Form Genre Term | ignore $w for now
 485 $v | Alternate Form (technically, tracing title) of Form Subdivision Term | ignore $5 always
 555 $a | Alternate Form (technically, See Also) of Form Genre Term | ignore $0, identifier for other term, for now
 680 | Public, general note. | Keep for general matching field?
+688 | Do not map. | Usage stats.
 700 | Linked Personal Name | Ignore $0 and $w for now
 750 | Linked Topical Term | Ignore $0 and $w for now
 755 | Linked GenreForm Term | Ignore $0 and $w for now
@@ -25,22 +31,6 @@ tag | field info | note
 
 
 ## MARC Data Analysis (Raw)
-
-
-### Chronological Fields
-
-```
-            001: |=========================|    676/676 | 100%
-            003: |=========================|    676/676 | 100%
-            005: |=========================|    676/676 | 100%
-            008: |=========================|    676/676 | 100%
-    016_7 _$a$2: |=========================|    676/676 | 100%
-040_  _$a$b$c$f: |=========================|    676/676 | 100%
-      148_  _$a: |=========================|    676/676 | 100%
-      448_  _$a: |======================== |    675/676 |  99%
-    448_  _$a$w: |                         |      3/676 |   0%
-      688_  _$a: |=========================|    676/676 | 100%
-```
 
 ### Event Fields
 
@@ -673,4 +663,20 @@ tag | field info | note
                             780_ 0_$x$x$x$0$w: |                         |      5/453891 |   0%
                                 781_ 0_$z$0$w: |                         |      1/453891 |   0%
                                 785_ 0_$v$0$w: |                         |     13/453891 |   0%
+```
+
+
+### Chronological Fields
+
+```
+            001: |=========================|    676/676 | 100%
+            003: |=========================|    676/676 | 100%
+            005: |=========================|    676/676 | 100%
+            008: |=========================|    676/676 | 100%
+    016_7 _$a$2: |=========================|    676/676 | 100%
+040_  _$a$b$c$f: |=========================|    676/676 | 100%
+      148_  _$a: |=========================|    676/676 | 100%
+      448_  _$a: |======================== |    675/676 |  99%
+    448_  _$a$w: |                         |      3/676 |   0%
+      688_  _$a: |=========================|    676/676 | 100%
 ```
