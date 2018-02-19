@@ -27,7 +27,7 @@ func main() {
 
 		id, ok := rec.GetCField("001")
 		if ok {
-			recPath := fmt.Sprintf("../derived-data/fast-records/%v.mrc", id.Value)
+			recPath := fmt.Sprintf("/Users/sul.cmharlow/go/src/github.com/fubrenda/fast-backup/oclcfast-records/%v.mrc", id.Value)
 			out, err := os.Create(recPath)
 			checkError(err)
 
