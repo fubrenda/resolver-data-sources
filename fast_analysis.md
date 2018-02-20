@@ -1,5 +1,15 @@
 # OCLC FAST
 
+## Recon numbers
+
+5662404 $0 fields within ~1938000 records.
+
+Recon sources ($0) :
+- viaf
+- wikipedia
+- OCoLC
+- DLC 
+
 
 ## Mapped Fields for Resolver
 
