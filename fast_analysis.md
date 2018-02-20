@@ -5,10 +5,13 @@
 5662404 $0 fields within ~1938000 records.
 
 Recon sources ($0) :
-- viaf
+- VIAF: 1213212 occurrences
+- OCoLC: 689711 occurrences
+- DLC: 2057646 occurrences
+- Geonames: 86243 occurrences
+- dbpedia
 - wikipedia
-- OCoLC
-- DLC 
+- undefined URI: 1602468 occurrences
 
 
 ## Mapped Fields for Resolver
