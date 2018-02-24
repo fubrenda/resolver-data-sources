@@ -1,0 +1,316 @@
+{
+  "identifier": "001",
+  "alt-identifier": [{
+    "tag": "016",
+    "subfield": ["a"]
+  }],
+  "old-identifier": [{
+    "tag": "016",
+    "subfield": ["z"]
+  }],
+  "other-identifier": [{
+      "tag": "700",
+      "subfield": ["0"]
+    },
+    {
+      "tag": "710",
+      "subfield": ["0"]
+    },
+    {
+      "tag": "711",
+      "subfield": ["0"]
+    },
+    {
+      "tag": "730",
+      "subfield": ["0"]
+    },
+    {
+      "tag": "748",
+      "subfield": ["0"]
+    },
+    {
+      "tag": "750",
+      "subfield": ["0"]
+    },
+    {
+      "tag": "751",
+      "subfield": ["0"]
+    },
+    {
+      "tag": "755",
+      "subfield": ["0"]
+    },
+    {
+      "tag": "780",
+      "subfield": ["0"]
+    },
+    {
+      "tag": "781",
+      "subfield": ["0"]
+    },
+    {
+      "tag": "785",
+      "subfield": ["0"]
+    }
+  ],
+  "heading": [{
+      "tag": "100",
+      "type": "personal-name"
+    },
+    {
+      "tag": "110",
+      "type": "corporate-name"
+    },
+    {
+      "tag": "111",
+      "type": "meeting-name"
+    },
+    {
+      "tag": "130",
+      "type": "uniform-title"
+    },
+    {
+      "tag": "148",
+      "type": "chronological-term"
+    },
+    {
+      "tag": "150",
+      "type": "topic"
+    },
+    {
+      "tag": "151",
+      "type": "geographic"
+    },
+    {
+      "tag": "155",
+      "type": "form-genre"
+    },
+    {
+      "tag": "180",
+      "type": "general-subdivision"
+    },
+    {
+      "tag": "181",
+      "type": "geo-subdivision"
+    },
+    {
+      "tag": "182",
+      "type": "chrono-subdivision"
+    },
+    {
+      "tag": "185",
+      "type": "form-subdivision"
+    }
+  ],
+  "alt-heading": [{
+      "tag": "400",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "500",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "700",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "410",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "510",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "710",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "411",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "511",
+      "subfield": ["!w", "!$0"]
+    },
+    {
+      "tag": "711",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "430",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "530",
+      "subfield": ["!w", "!0"]
+    },
+    {
+      "tag": "730",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "445"
+    },
+    {
+      "tag": "448",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "548",
+      "subfield": ["!w", "!2"]
+    },
+    {
+      "tag": "748",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "450",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "550",
+      "subfield": ["!w", "!0"]
+    },
+    {
+      "tag": "750",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "451",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "551",
+      "subfield": ["!w", "!0"]
+    },
+    {
+      "tag": "751",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "455",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "555",
+      "subfield": ["!w", "!0"]
+    },
+    {
+      "tag": "755",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "480",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "580",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "780",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "581",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "781",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "482",
+      "subfield": ["!w", "!5"]
+    },
+    {
+      "tag": "485",
+      "subfield": ["!w", "!5"]
+    },
+    {
+      "tag": "585",
+      "subfield": ["!w"]
+    },
+    {
+      "tag": "785",
+      "subfield": ["!w"]
+    }
+  ],
+  "west-coordinate": [{
+    "tag": "034",
+    "subfield": ["d"]
+  }],
+  "east-coordinate": [{
+    "tag": "034",
+    "subfield": ["e"]
+  }],
+  "north-coordinate": [{
+    "tag": "034",
+    "subfield": ["f"]
+  }],
+  "south-coordinate": [{
+    "tag": "034",
+    "subfield": ["g"]
+  }],
+  "marc-geo-code": [{
+    "tag": "043",
+    "subfield": ["a"]
+  }],
+  "start-date": [{
+    "tag": "046",
+    "subfield": ["s"]
+  }],
+  "death-date": [{
+    "tag": "046",
+    "subfield": ["g"]
+  }],
+  "end-date": [{
+    "tag": "046",
+    "subfield": ["t"]
+  }],
+  "classification": [{
+    "tag": "053",
+    "subfield": ["a", "b", "c"]
+  }],
+  "meeting-type": [{
+    "tag": "368",
+    "subfield": ["a"]
+  }],
+  "meeting-info": [{
+    "tag": "368",
+    "subfield": ["c"]
+  }],
+  "country": [{
+    "tag": "370",
+    "subfield": ["c"]
+  }],
+  "headquarters": [{
+    "tag": "370",
+    "subfield": ["e"]
+  }],
+  "location": [{
+    "tag": "370",
+    "subfield": ["f"]
+  }],
+  "place-of-origin": [{
+    "tag": "370",
+    "subfield": ["g"]
+  }],
+  "field-of-action": [{
+    "tag": "372",
+    "subfield": ["a"]
+  }],
+  "group": [{
+    "tag": "373",
+    "subfield": ["a"]
+  }],
+  "language": [{
+    "tag": "377",
+    "subfield": ["a"]
+  }],
+  "general-note": [{
+    "tag": "680"
+  }]
+}
